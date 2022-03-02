@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:Text(('this is naitik sharma this is my new repo'),
+      home:Text(('this is naitik sharma this is my new repo '
+          'hey  bhuvan patel'),
     ),);
   }
 }
