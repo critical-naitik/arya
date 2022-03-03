@@ -24,10 +24,8 @@ class Constants {
     accentColor: lightAccent,
     cursorColor: lightAccent,
     scaffoldBackgroundColor: lightBG,
-
     appBarTheme: AppBarTheme(
       elevation: 0,
-
       textTheme: TextTheme(
         headline6: TextStyle(
           color: textcolor,
@@ -38,8 +36,6 @@ class Constants {
     ),
   );
 
-
   //for Dark Theme
-
 
 }
