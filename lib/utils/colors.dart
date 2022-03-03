@@ -13,7 +13,7 @@ class Constants {
   static Color lightBG = Color(0xfffcfcff);
   static Color textcolor = Colors.black;
   static Color badgeColor = Colors.red;
-  static Color Orange = Color(0xffee9503);
+  static Color Orange = Color(0xffFFD54F);
 
   // theme colors are defined below :
 
