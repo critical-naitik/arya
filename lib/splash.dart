@@ -12,7 +12,16 @@ class Splash_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Arya-app'),centerTitle: true,backgroundColor: Colors.red,),
+    
+      appBar: AppBar(
+        title: Text('Arya-app'),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+        actions: [IconButton(onPressed: (){}, icon: Icon(Icons.notification_add))],
+      ),
+      
+      drawer: Drawer(),
+  
       body:Container(color: Constants.Orange),
     );
   }
