@@ -1,14 +1,15 @@
 import 'package:concentric_transition/concentric_transition.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
   final data = [
     ItemData(
-      title: "STUDY MATERIAL ONE PLACE",
-      subtitle: "Send messages to your friends and family. ",
+      title: "TITLE-1",
+      subtitle: " Content 1 ",
       image: const AssetImage("assets/images/image-2.png"),
       backgroundColor: const Color.fromRGBO(0, 10, 56, 1),
       titleColor: Colors.amber,
@@ -17,8 +18,8 @@ class HomePage extends StatelessWidget {
           'https://assets2.lottiefiles.com/packages/lf20_bq485nmk.json'),
     ),
     ItemData(
-      title: "CREATE GROUPS",
-      subtitle: "Connent with your friends through groups.",
+      title: "TITLE-2",
+      subtitle: "Content 2.",
       image: const AssetImage("assets/images/image-3.png"),
       backgroundColor: Colors.white,
       titleColor: Colors.purple,
@@ -27,8 +28,8 @@ class HomePage extends StatelessWidget {
           'https://assets2.lottiefiles.com/packages/lf20_bq485nmk.json'),
     ),
     ItemData(
-      title: "BE PRODUCTIVE",
-      subtitle: "Get work done with your friends and be productive.",
+      title: "TITLE-3",
+      subtitle: "Content 3",
       image: const AssetImage("assets/images/image-4.png"),
       backgroundColor: const Color.fromRGBO(71, 59, 117, 1),
       titleColor: Colors.orange.shade600,
@@ -36,23 +37,13 @@ class HomePage extends StatelessWidget {
       background: Lottie.network(
           'https://assets2.lottiefiles.com/packages/lf20_bq485nmk.json'),
     ),
-    ItemData(
-      title: "ADVANCE MESSAGING",
-      subtitle: "Use advanced messaging features to get more out our app.",
-      image: const AssetImage("assets/images/image-1.png"),
-      backgroundColor: Colors.white,
-      titleColor: Colors.red.shade400,
-      subtitleColor: Colors.black,
-      background: Lottie.network(
-          'https://assets2.lottiefiles.com/packages/lf20_bq485nmk.json'),
-    ),
+
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ConcentricPageView(
-        
         radius: 30,
         colors: data.map((e) => e.backgroundColor).toList(),
         itemCount: data.length,
@@ -97,37 +88,45 @@ class ItemWidget extends StatelessWidget {
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Spacer(flex: 3),
+              const Spacer(flex: 2),
               Flexible(
                 flex: 20,
                 child: Image(image: data.image),
               ),
+
               const Spacer(flex: 1),
+
               Text(
                 data.title,
-                style: TextStyle(
-                  color: data.titleColor,
-                  fontSize: 20,
+                style: GoogleFonts.roboto(  color: data.titleColor,
+                  fontSize:32,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,
                 ),
-                maxLines: 1,
-              ),
-              const Spacer(flex: 1),
+                maxLines: 1,),
+
+
+
+              const Spacer(flex: 2),
+
               Text(
                 data.subtitle,
                 style: TextStyle(
                   color: data.subtitleColor,
-                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 18,
                 ),
                 textAlign: TextAlign.center,
                 maxLines: 2,
               ),
-              const Spacer(flex: 10),
+
+             // SPACER FOR THE CONCENTRIC RADIUS
+              const Spacer(flex: 15),
             ],
           ),
         ),

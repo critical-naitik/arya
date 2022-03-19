@@ -12,10 +12,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2),
+    Timer(Duration(seconds: 3),
           ()=>Navigator.pushReplacement(context,
-                                        MaterialPageRoute(builder:
-                                                          (context) => 
+                                        MaterialPageRoute(builder: (context) =>
                                                           HomePage()
                                                          )
                                        )
@@ -24,12 +23,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Color(0xffB71C1C),
       body: Center(
-
         child:AnimatedTextKit(animatedTexts: [
-         TyperAnimatedText("Hello Arya",textStyle: GoogleFonts.paprika(color: Colors.white,fontSize: 36,fontWeight:FontWeight.bold))
+         TyperAnimatedText("Hello Arya",textStyle: GoogleFonts.roboto(color: Colors.white,fontSize: 36,fontWeight:FontWeight.bold))
         ],)
       ),
     );
