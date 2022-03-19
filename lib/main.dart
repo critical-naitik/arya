@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:arya/Screens/OnBoardingScreen.dart';
 import 'package:arya/Screens/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: MyHomePage(),
     );
   }
 }
