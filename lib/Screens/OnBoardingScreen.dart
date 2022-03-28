@@ -1,7 +1,9 @@
+import 'package:arya/Screens/Landing.dart';
 import 'package:concentric_transition/concentric_transition.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Landing.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -23,7 +25,7 @@ class HomePage extends StatelessWidget {
       image: const AssetImage("assets/images/image-3.png"),
       backgroundColor: Colors.white,
       titleColor: Colors.purple,
-      subtitleColor: const Color.fromRGBO(0, 10, 56, 1),
+      subtitleColor: const Color.fromRGBO(0, 10, 56, 0.5),
       background: Lottie.network(
           'https://assets2.lottiefiles.com/packages/lf20_bq485nmk.json'),
     ),
@@ -37,12 +39,12 @@ class HomePage extends StatelessWidget {
       background: Lottie.network(
           'https://assets2.lottiefiles.com/packages/lf20_bq485nmk.json'),
     ),
-
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: ConcentricPageView(
         radius: 30,
         colors: data.map((e) => e.backgroundColor).toList(),
@@ -51,7 +53,9 @@ class HomePage extends StatelessWidget {
           return ItemWidget(data: data[index]);
         },
       ),
+
     );
+
   }
 }
 
@@ -88,7 +92,6 @@ class ItemWidget extends StatelessWidget {
     return Stack(
       children: [
         Padding(
-
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -103,14 +106,14 @@ class ItemWidget extends StatelessWidget {
 
               Text(
                 data.title,
-                style: GoogleFonts.roboto(  color: data.titleColor,
-                  fontSize:32,
+                style: GoogleFonts.roboto(
+                  color: data.titleColor,
+                  fontSize: 32,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,
                 ),
-                maxLines: 1,),
-
-
+                maxLines: 1,
+              ),
 
               const Spacer(flex: 2),
 
@@ -125,11 +128,18 @@ class ItemWidget extends StatelessWidget {
                 maxLines: 2,
               ),
 
-             // SPACER FOR THE CONCENTRIC RADIUS
+              // SPACER FOR THE CONCENTRIC RADIUS
               const Spacer(flex: 15),
             ],
           ),
         ),
+        IconButton(icon: (Icon(Icons.import_contacts)), onPressed:() {
+    Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => MainScreen()),
+    );
+    }
+        )
       ],
     );
   }
